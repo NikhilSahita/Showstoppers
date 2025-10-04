@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            p.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            }
+
+            .top {
+            display: flex;
+            flex: 1;
+            }
+
+            .top-left {
+            flex: 1;
+            background-color: lightblue;
+            padding: 20px;
+            }
+
+            .top-right {
+            flex: 1;
+            background-color: lightcoral;
+            padding: 20px;
+            }
+
+            .bottom {
+            background-color: lightgreen;
+            padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top">
+              <div class="top-left">Item name and Thumbnail</div>
+              <div class="top-right">Recipe</div>
+            </div>
+            <div class="bottom">Ingredients</div>
+          </div>
+    </body>
+    <script>
+        const paragraph = document.getElementById('myParagraph');
+        setTimeout(() => {
+          paragraph.classList.add('show');
+        }, 100);
+    </script>
+</html>

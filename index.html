@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            p {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            p.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
+        </style>
     </head>
     <body>
-
+        <p id="myParagraph">This is a paragraph</p>
     </body>
+    <script>
+        const paragraph = document.getElementById('myParagraph');
+        setTimeout(() => {
+          paragraph.classList.add('show');
+        }, 100);
+    </script>
 </html>
