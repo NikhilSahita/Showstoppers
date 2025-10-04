@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe Explorer 🍽️</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="try3.css">
 </head>
 <body>
   <header>
@@ -25,23 +25,20 @@
       <h1>Discover Delicious Recipes</h1>
       <p>Find your next favorite meal — from all around the world 🌍</p>
 
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search for a meal...">
-        <button id="searchBtn">Search</button>
-      </div>
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search for a meal...">
+        <div id="suggestions-dropdown"></div>
+      </form>
+      
     </div>
   </section>
-
-  <section id="mealContainer" class="meal-container"></section>
-  <input type="text" id="searchBox" placeholder="Search...">
-  <input type="text" id="searchBox" placeholder="Search...">
-  <div id="recommendationsDropdown"></div>
+  
   
 
   <footer>
     <p>Made with ❤️ by WebDev Hackathon Team | Powered by TheMealDB API</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="try2.js"></script>
 </body>
 </html>

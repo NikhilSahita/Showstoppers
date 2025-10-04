@@ -1,43 +1,45 @@
-const searchBox = document.getElementById('searchBox');
-const recommendationsDropdown = document.getElementById('recommendationsDropdown');
+const searchInput = document.getElementById('search-input');
+const suggestionsDropdown = document.getElementById('suggestions-dropdown');
 
-searchBox.addEventListener('input', async (event) => {
-    const query = event.target.value;
+searchInput.addEventListener('input', async (event) => {
+  const searchTerm = event.target.value;
+  if (searchTerm === '') {
+    suggestionsDropdown.innerHTML = '';
+    return;
+  }
 
-    if (query.length > 2) { // Only search if query is long enough
-        try {
-            const response = await fetch(`/api/search?q=${query}`); // Replace with your API endpoint
-            const data = await response.json();
+  const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
 
-            recommendationsDropdown.innerHTML = ''; // Clear previous recommendations
-
-            if (data.recommendations && data.recommendations.length > 0) {
-                data.recommendations.forEach(item => {
-                    const recommendationItem = document.createElement('div');
-                    recommendationItem.classList.add('recommendation-item');
-                    recommendationItem.textContent = item.name; // Assuming 'name' is the recommendation text
-                    recommendationItem.addEventListener('click', () => {
-                        searchBox.value = item.name;
-                        recommendationsDropdown.style.display = 'none'; // Hide dropdown after selection
-                    });
-                    recommendationsDropdown.appendChild(recommendationItem);
-                });
-                recommendationsDropdown.style.display = 'block'; // Show dropdown
-            } else {
-                recommendationsDropdown.style.display = 'none'; // Hide if no recommendations
-            }
-        } catch (error) {
-            console.error('Error fetching recommendations:', error);
-            recommendationsDropdown.style.display = 'none';
-        }
-    } else {
-        recommendationsDropdown.style.display = 'none'; // Hide if query is too short
-    }
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    displaySuggestions(data.meals); 
+  } catch (error) {
+    console.error('Error fetching data from the MealDB API:', error);
+    suggestionsDropdown.innerHTML = '<p>No meals found. Please try another search.</p>';
+  }
 });
+function displaySuggestions(meals) {
+  suggestionsDropdown.innerHTML = ''; // Clear old suggestions
 
-// Hide dropdown when clicking outside
-document.addEventListener('click', (event) => {
-    if (!searchBox.contains(event.target) && !recommendationsDropdown.contains(event.target)) {
-        recommendationsDropdown.style.display = 'none';
-    }
-});
+  if (!meals) {
+    suggestionsDropdown.innerHTML = '<p class="suggestion-item">No meals found.</p>';
+    return;
+  }
+
+  // Create a suggestion item for each meal returned by the API
+  meals.forEach(meal => {
+    const suggestionItem = document.createElement('div');
+    suggestionItem.classList.add('suggestion-item');
+    suggestionItem.textContent = meal.strMeal;
+    
+    // Add a click handler to populate the search box
+    suggestionItem.addEventListener('click', () => {
+      searchInput.value = meal.strMeal;
+      suggestionsDropdown.innerHTML = ''; // Hide suggestions after selection
+    });
+    
+    suggestionsDropdown.appendChild(suggestionItem);
+  });
+}
