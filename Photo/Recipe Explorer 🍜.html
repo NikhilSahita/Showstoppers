@@ -16,55 +16,53 @@
 
   <!-- Hero / Search Section -->
   <section class="hero">
+    <div class="overlay"></div>
     <div class="hero-content">
       <h1>Discover Delicious Recipes</h1>
       <p>Search for meals from around the world 🌍</p>
 
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="Type meal name...">
-        <div id="suggestions-dropdown"></div>
         <button id="searchBtn">Search</button>
       </div>
       <div id="comment" class="comment-popup"></div>
     </div>
   </section>
 
-   <!-- Meal Display Section -->
-  <section id="mealContainer" class="meal-container"></section>
-
   <!-- Dish Items Section -->
   <section class="dish-items">
     <h2>Explore Popular Dishes</h2>
     <div class="dish-grid">
-      <div class="dish-box" data-meal="Pizza">
+      <div class="dish-box">
         <img src="Photo/Pizza.avif" alt="Pizza">
         <h3>Pizza</h3>
       </div>
-      <div class="dish-box" data-meal="Burger">
+      <div class="dish-box">
         <img src="Photo/Burger.jpg" alt="Burger">
         <h3>Burger</h3>
       </div>
-      <div class="dish-box" data-meal="Pasta">
+      <div class="dish-box">
         <img src="Photo/Pasta.jpeg" alt="Pasta">
         <h3>Pasta</h3>
       </div>
-      <div class="dish-box" data-meal="Sushi">
+      <div class="dish-box">
         <img src="Photo/Sushi.jpg" alt="Sushi">
         <h3>Sushi</h3>
       </div>
-      <div class="dish-box" data-meal="Salad">
+
+      <div class="dish-box">
         <img src="Photo/Salad.jpeg" alt="Salad">
         <h3>Salad</h3>
       </div>
-      <div class="dish-box" data-meal="Steak">
+      <div class="dish-box">
         <img src="Photo/Steak.jpg" alt="Steak">
         <h3>Steak</h3>
       </div>
-      <div class="dish-box" data-meal="Sandwich">
+      <div class="dish-box">
         <img src="Photo/Sandwich.jpg" alt="Sandwich">
         <h3>Sandwich</h3>
       </div>
-      <div class="dish-box" data-meal="Soup">
+      <div class="dish-box">
         <img src="Photo/Soup.jpg" alt="Soup">
         <h3>Soup</h3>
       </div>
@@ -74,7 +72,6 @@
   <!-- Meal Display Section -->
   <section id="mealContainer" class="meal-container"></section>
 
-  <!-- Footer -->
   <footer>
     <p>Made with ❤️ using <a href="https://www.themealdb.com/" target="_blank">TheMealDB API</a></p>
   </footer>
