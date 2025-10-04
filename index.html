@@ -1,9 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Explorer 🍜</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    </head>
-    <body>
+  <!-- Header -->
+  <header>
+    <div class="logo">🍽️</div>
+    <div class="site-name">Recipe Explorer</div>
+  </header>
 
-    </body>
+  <!-- Hero / Search Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Delicious Recipes</h1>
+      <p>Search for meals from around the world 🌍</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Type meal name...">
+        <button id="searchBtn">Search</button>
+      </div>
+      <div id="comment" class="comment-popup"></div>
+    </div>
+  </section>
+
+   <!-- Meal Display Section -->
+  <section id="mealContainer" class="meal-container"></section>
+
+  <!-- Dish Items Section -->
+  <section class="dish-items">
+    <h2>Explore Popular Dishes</h2>
+    <div class="dish-grid">
+      <div class="dish-box" data-meal="Pizza">
+        <img src="Photo/Pizza.avif" alt="Pizza">
+        <h3>Pizza</h3>
+      </div>
+      <div class="dish-box" data-meal="Burger">
+        <img src="Photo/Burger.jpg" alt="Burger">
+        <h3>Burger</h3>
+      </div>
+      <div class="dish-box" data-meal="Pasta">
+        <img src="Photo/Pasta.jpeg" alt="Pasta">
+        <h3>Pasta</h3>
+      </div>
+      <div class="dish-box" data-meal="Sushi">
+        <img src="Photo/Sushi.jpg" alt="Sushi">
+        <h3>Sushi</h3>
+      </div>
+      <div class="dish-box" data-meal="Salad">
+        <img src="Photo/Salad.jpeg" alt="Salad">
+        <h3>Salad</h3>
+      </div>
+      <div class="dish-box" data-meal="Steak">
+        <img src="Photo/Steak.jpg" alt="Steak">
+        <h3>Steak</h3>
+      </div>
+      <div class="dish-box" data-meal="Sandwich">
+        <img src="Photo/Sandwich.jpg" alt="Sandwich">
+        <h3>Sandwich</h3>
+      </div>
+      <div class="dish-box" data-meal="Soup">
+        <img src="Photo/Soup.jpg" alt="Soup">
+        <h3>Soup</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meal Display Section -->
+  <section id="mealContainer" class="meal-container"></section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ using <a href="https://www.themealdb.com/" target="_blank">TheMealDB API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
