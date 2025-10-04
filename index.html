@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            p {
-                opacity: 0;
-                transform: translateY(40px);
-                transition: opacity 0.6s ease, transform 0.6s ease;
-            }
-            p.show {
-                opacity: 1;
-                transform: translateY(0);
-            }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Explorer 🍽️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🍜 Recipe Explorer</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Chinese</a></li>
+        <li><a href="#">Italian</a></li>
+        <li><a href="#">Indian</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        </style>
-    </head>
-    <body>
-        <p id="myParagraph">This is a paragraph</p>
-    </body>
-    <script>
-        const paragraph = document.getElementById('myParagraph');
-        setTimeout(() => {
-          paragraph.classList.add('show');
-        }, 100);
-    </script>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Delicious Recipes</h1>
+      <p>Find your next favorite meal — from all around the world 🌍</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for a meal...">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="mealContainer" class="meal-container"></section>
+
+  <footer>
+    <p>Made with ❤️ by WebDev Hackathon Team | Powered by TheMealDB API</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

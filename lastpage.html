@@ -16,7 +16,10 @@
             flex-direction: column;
             min-height: 100vh;
             }
-
+            .topmost {
+            background-color: blue;
+            padding: 20px;
+            }
             .top {
             display: flex;
             flex: 1;
@@ -42,11 +45,23 @@
     </head>
     <body>
         <div class="container">
-            <div class="top">
-              <div class="top-left">Item name and Thumbnail</div>
-              <div class="top-right">Recipe</div>
+            <div class="topmost">
+                <h1>Item-Name</h1>
+                <p>Fetched from API</p>
             </div>
-            <div class="bottom">Ingredients</div>
+            <div class="top">
+              <div class="top-left">
+
+              </div>
+              <div class="top-right">
+                <h1>Recipe</h1>
+                <p>Fetched from API</p>
+              </div>
+            </div>
+            <div class="bottom">
+                <h1>Ingredients</h1>
+                <p>Fetched from API</p>
+            </div>
           </div>
     </body>
     <script>
